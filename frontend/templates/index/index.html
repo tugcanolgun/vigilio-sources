@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% csrf_token %}
+    {% if user.is_authenticated %}
+        <div id="root" value="true"></div>
+    {% else %}
+        <div id="root" value=""></div>
+    {% endif %}
+{% endblock %}
+{% block footer %}
+    <script src="{% static 'Main-bundle.js' %}"></script>
+{% endblock %}

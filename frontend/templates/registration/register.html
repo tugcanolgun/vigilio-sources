@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include 'nav-bar.html' %}
+    <div class="container main-content">
+        <div class="d-flex justify-content-center">
+            <div class="user-form-content">
+                <h1>Register</h1>
+                <form method="POST" action="{% url 'backend:register' %}">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <p>
+                            {{ field.label_tag }}<br>
+                            {{ field }}
+                            {% if field.help_text %}
+                                <small>{{ field.help_text }}</small>
+                            {% endif %}
+                            {% for error in field.errors %}
+                                <p style="color: red">{{ error }}</p>
+                            {% endfor %}
+                        </p>
+                    {% endfor %}
+                    <button class="btn btn-success" type="submit">Sign Up</button>
+                </form>
+
+                <br/>
+                <br/>
+                If you already have an account, <a href="{% url 'backend:login' %}">login</a> instead.
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

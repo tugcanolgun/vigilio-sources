@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% include 'nav-bar.html' %}
+    <div class="container, main-content">
+        <div class="d-flex justify-content-center">
+            <div class="user-form-content my-4">
+                <h1>Login</h1>
+                {% if form.errors %}
+                    <p>Your username and password didn't match. Please try again.</p>
+                {% endif %}
+
+                {% if next %}
+                    {% if user.is_authenticated %}
+                        <p>Your account doesn't have access to this page. To proceed,
+                            please login with an account that has access.</p>
+                    {% else %}
+                        <p style="color: grey">Please login to see this page.</p>
+                    {% endif %}
+                {% endif %}
+
+                <form method="post" action="{% url 'backend:login' %}">
+                    {% csrf_token %}
+                    <input placeholder="Username" name="username" id="username"
+                           type="text" class="form-control my-3" aria-label=""
+                           aria-describedby="basic-addon1" autofocus
+                    />
+                    <input placeholder="Password" name="password" id="password"
+                           type="password" class="form-control" aria-label=""
+                           aria-describedby="basic-addon1" autofocus
+                    />
+                    <input type="submit" class="btn btn-success my-3" value="login">
+                    <input type="hidden" name="next" value="{{ next }}">
+                </form>
+                <br/>
+                If you don't have an account, <a href="{% url 'backend:register' %}">register here</a>.
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+{% endblock %}

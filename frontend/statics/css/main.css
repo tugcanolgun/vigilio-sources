@@ -1,0 +1,155 @@
+:root {
+    --multiplier: 0.7;
+}
+
+@font-face {
+    font-family: "Montserrat-Light";
+    src: url("../fonts/Montserrat-Light.ttf");
+}
+
+body {
+    font-family: 'Montserrat-Light', sans-serif;
+    background-color: #b5a5e7;
+}
+
+h1, h2, h3 {
+    color: #3e2c6b;
+}
+
+a {
+    outline: 0;
+}
+
+.main-nav {
+    background-color: #3e2c6b;
+    color: #d3b7ec;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.main-nav a {
+    color: #d3b7ec;
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    color: #ffffff;
+}
+
+.main-footer {
+    background-color: #8359b8;
+    color: #ffffff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.main-content {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.main-content a {
+    color: #3e2c6b;
+}
+
+.main-content a:hover {
+    color: #8359b8;
+}
+
+.user-form-content {
+    min-width: 450px;
+}
+
+.btn-success {
+    border-color: #8359b8;
+    background-color: #8359b8;
+    color: #FFF;
+}
+
+.btn-success:hover {
+    border-color: #3e2c6b;
+    background-color: #3e2c6b;
+}
+
+.btn-success:disabled {
+    border-color: #a58edf;
+    background-color: #a58edf;
+    color: #FFF;
+}
+
+.btn-secondary {
+    border-color: #3e2c6b;
+    background-color: #3e2c6b;
+    color: #FFF;
+}
+
+.btn-secondary:hover {
+    border-color: #8359b8;
+    background-color: #8359b8;
+}
+
+.btn-primary {
+    border-color: #8359b8;
+    background-color: #8359b8;
+    color: #FFF;
+}
+
+.btn-primary:hover {
+    border-color: #3e2c6b;
+    background-color: #3e2c6b;
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .container {
+        max-width: calc(720px * var(--multiplier));
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .container {
+        max-width: calc(960px * var(--multiplier));
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    .container {
+        max-width: calc(1140px * var(--multiplier));
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .container {
+        max-width: calc(1320px * var(--multiplier));
+    }
+}
+
+.form-control:focus {
+    border-color: #a58edf;
+    box-shadow: 0 0 0 0.2rem rgba(62, 44, 107, 0.25);
+}
+
+code {
+    color: #3e2c6b;
+}
+
+::-moz-selection {
+    color: #3e2c6b;
+    background: #fdc432;
+}
+
+::selection {
+    color: #3e2c6b;
+    background: #fdc432;
+}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% include 'nav-bar.html' %}
+    <div class="container, main-content">
+        <div class="d-flex justify-content-center">
+            <div class="user-form-content my-4">
+                <h1>Successfully logged out</h1>
+
+                <hr />
+                <a href="{% url 'backend:index' %}">Go to Main Page</a>
+                <div class="my-2"> </div>
+                <a href="{% url 'backend:login' %}">Login again.</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+{% endblock %}

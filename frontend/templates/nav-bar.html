@@ -1,0 +1,30 @@
+{% load static %}
+<div class="container-fluid main-nav">
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex align-items-center">
+                <div>
+                    <a href="{% url 'backend:index' %}">
+                        <img src={% static 'images/v.png' %} width="48"/>
+                    </a>
+                </div>
+                <div class="mx-3">
+                    <span style="font-size: 32px;">Vigilio Sources</span>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <div class="d-flex align-items-center">
+                    {% if user.is_authenticated %}
+                        <div id="nav-root" user="{{ user }}"></div>
+                        <a href="{% url 'backend:logout' %}">Logout</a>
+                    {% else %}
+                        <a href="/">Home</a>&nbsp;-&nbsp;
+                        <div id="nav-root" user=""></div>
+                        <a href="{% url 'backend:login' %}">Login</a>&nbsp;-&nbsp;
+                        <a href="{% url 'backend:register' %}">Register</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

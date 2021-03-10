@@ -1,0 +1,6 @@
+.idea/
+venv/
+frontend/node_modules/
+frontend/yarn-error.log
+*.sqlite3
+
