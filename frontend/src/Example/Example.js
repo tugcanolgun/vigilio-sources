@@ -1,13 +1,13 @@
 import React, {useState} from "react";
 import axios from "axios";
 import Input from "./Input";
-import Result from "./Result";
+import Result from "../AddSchema/Result";
 import MudParser from "mud-parser";
 import {Link} from "react-router-dom";
 import SimpleInput from "../AddSchema/SimpleInput";
 import {inject} from "../utils";
 
-const ApiCheck = () => {
+const Example = () => {
   const [searchInput, setSearchInput] = useState("");
   const [apiUrl, setApiUrl] = useState("https://yts.mx/api/v2/list_movies.json?query_term=${searchInput}");
   const [results, setResults] = useState([]);
@@ -29,6 +29,12 @@ const ApiCheck = () => {
       key: "image",
       value: "data.movies.0.small_cover_image",
       placeHolder: "An image source",
+    },
+    year: {
+      _: 'year',
+      key: 'year',
+      value: 'data.movies.0.year',
+      placeHolder: 'Year'
     },
     source: {
       _: "source",
@@ -133,4 +139,4 @@ const ApiCheck = () => {
   );
 };
 
-export default ApiCheck;
+export default Example;

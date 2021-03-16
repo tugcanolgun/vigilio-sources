@@ -11,8 +11,8 @@ const Help = () => {
             Vigilio is using <a href="https://www.npmjs.com/package/mud-parser" target="_blank">mud-parser</a>
             &nbsp;to get search results and show the acquired results.
             This website is a front-end to add sources easier.
-            A source has to have at least imdbId and a source.
-            Source can be either a magnet or .torrent file url.
+            A source has to have at least an imdbId and a source.
+            The source can be either a magnet or .torrent file url.
           </p>
           <h2>Fields</h2>
           <p>A valid imdb ID and a source is mandatory. Although the rest of the fields are optional, it is
@@ -32,8 +32,8 @@ const Help = () => {
           <p>Property values are spearated by dots. <code>movieDetails.movieTitle</code></p>
           <p>Arrays are designated by zeros. Array values can be in the beginning, middle
             or the end of a value. <code>movideDetails.cast.0.fullName</code> or <code>0.title</code></p>
-          <p>Renaming an intermediary properties can be done with pope symbols.&nbsp;
-            <code>movieDetails.cast|castMembers.0.fullName</code> would be renaming cast to castName. This is useful
+          <p>Renaming an intermediary properties can be done with pipe symbols.
+            &nbsp;<code>movieDetails.cast|castMembers.0.fullName</code> would be renaming cast to castName. This is useful
             because Vigilio is expecting sources array for the list of sources.</p>
           <div className="mb-5"></div>
         </div>

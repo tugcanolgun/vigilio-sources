@@ -1,5 +1,5 @@
 import axios from "axios";
-import {defaultSchema} from "./AddSchema/utls";
+import {defaultSchema} from "./AddSchema/utis";
 
 const login = ({email, password}) => {
   const formData = new FormData();

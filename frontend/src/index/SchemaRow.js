@@ -10,7 +10,7 @@ import Modal from "./Modal";
 import {getCSRFToken, getLocal, setLocal} from "../utils";
 import axios from "axios";
 import TestSchema from "./TestSchema";
-import Result from "../AddSource/Result";
+import Result from "../AddSchema/Result";
 
 const thStyle = {
   color: '#3e2c6b'

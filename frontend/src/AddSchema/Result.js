@@ -84,7 +84,7 @@ const Result = ({ data }) => {
         </div>
         <div className={"col"}>
           <span>
-            {data.title} {data.year ? `(${data.year})` : ""}
+            {data.title ? data.title : data.imdbId} {data.year ? `(${data.year})` : ""}
           </span>
         </div>
         <div className={"col align-center"}>

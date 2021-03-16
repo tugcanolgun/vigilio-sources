@@ -4,11 +4,11 @@ import FieldInput from "./FieldInput";
 import axios from "axios";
 import MudParser from "mud-parser";
 import getError from "../getError";
-import Result from "../AddSource/Result";
 import {ArrowLeftCircleSvg} from "../svg";
 import SaveForm from "./SaveForm";
 import {Link} from "react-router-dom";
 import {getLocal, inject, setLocal} from "../utils";
+import Result from "./Result";
 
 const AddSchema = () => {
   const [searchInput, setSearchInput] = useState(getLocal('searchInput'));

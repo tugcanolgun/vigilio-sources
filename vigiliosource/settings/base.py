@@ -29,9 +29,7 @@ if os.environ["SECRET_KEY"] in {"", None}:
 SECRET_KEY: str = os.environ["SECRET_KEY"]
 DEBUG: bool = False
 
-ALLOWED_HOSTS: List[str] = []
-
-# Application definition
+ALLOWED_HOSTS: List[str] = os.environ.get("ALLOWED_HOSTS", "").split(",")
 
 INSTALLED_APPS: List[str] = [
     "backend",

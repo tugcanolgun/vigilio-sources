@@ -1,11 +1,11 @@
 import React from 'react';
 import {render} from 'react-dom';
-import ApiCheck from './AddSource/ApiCheck';
 import {BrowserRouter, Route, Switch,} from "react-router-dom";
 import Index from "./index/index";
 import NavBar from "./HeaderFooter/NavBar";
 import AddSchema from "./AddSchema/AddSchema";
 import Help from "./Help/Help";
+import Example from "./Example/Example";
 
 
 const Main = () => {
@@ -19,7 +19,7 @@ const Main = () => {
               <AddSchema/>
             </Route>
             <Route path="/example">
-              <ApiCheck/>
+              <Example />
             </Route>
             <Route path="/help">
               <Help/>

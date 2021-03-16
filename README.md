@@ -5,7 +5,7 @@ This is a website to list all available Vigilio sources.
 
 Vigilio and this website rely on [mud-parser](https://www.npmjs.com/package/mud-parser)
 
-I created this in 3 days so the features are limited.
+I created this in one week so the features are limited.
 
 ## Features
 
