@@ -16,6 +16,7 @@ class SchemaDetailData:
     schema: Dict[str, str]
     version: int
     is_active: bool
+    is_legal: bool
 
 
 @dataclass
@@ -52,6 +53,7 @@ class SchemaSerializer(serializers.ModelSerializer):
             name=self.validated_data["name"],
             version=self.validated_data["version"],
             is_active=self.validated_data["is_active"],
+            is_legal=self.validated_data["is_legal"],
         )
 
     def validate_api_url(self, val: str) -> str:

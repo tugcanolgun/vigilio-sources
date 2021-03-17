@@ -121,4 +121,4 @@ REST_FRAMEWORK: Dict[str, str] = {
     ],
     "DEFAULT_THROTTLE_RATES": {"anon": "50/day", "user": "100/day"},
 }
-REDIS_URL: str = "redis://@localhost:6379/0"
+REDIS_URL: str = os.environ.get("REDIS_URL", None)

@@ -36,6 +36,7 @@ class SchemaList(generics.ListCreateAPIView):
             schema=data.schema,
             version=data.version,
             is_active=data.is_active,
+            is_legal=data.is_legal,
         )
         save_create(request.user.id)
 

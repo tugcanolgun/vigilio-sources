@@ -1,3 +1,4 @@
+import logging
 import time
 from typing import Optional, Any, Dict, Union
 
@@ -8,6 +9,7 @@ from rest_framework.exceptions import PermissionDenied
 from rest_framework.request import Request
 
 THROTTLE: Dict[str, Any] = {}
+logger = logging.getLogger(__name__)
 
 
 def get_client_ip(request: Request) -> str:
@@ -36,6 +38,7 @@ def get_redis() -> Optional[Redis]:
         r: Redis = redis.from_url(redis_url)
         r.ping()
     except redis.exceptions.ConnectionError:
+        logger.info("Redis is not available. Falling back to local storage.")
         return None
 
     return r
@@ -61,6 +64,7 @@ def _r_check_create(key: Union[int, str], expiration: int = 1800) -> bool:
         return True
 
     if (int(time.time()) - int(_time)) < expiration:
+        logger.info(f"Check has failed for {key}.")
         raise PermissionDenied(
             f"You can only do this in every {expiration // 60} mins."
         )
@@ -79,6 +83,7 @@ def _l_check_create(key: Union[int, str], expiration: int = 1800) -> int:
         return -1
 
     if (int(time.time()) - _time) < expiration:
+        logger.info(f"Check has failed for {key}.")
         raise PermissionDenied(
             f"You can only do this in every {expiration // 60} mins."
         )

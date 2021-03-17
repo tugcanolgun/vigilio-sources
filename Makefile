@@ -13,12 +13,12 @@ check_venv:
 		echo "Found virtualenv"; \
 	fi;
 
-fix: check_venv
+pyfix: check_venv
 	@echo "Running syntax fixer"
 	@${VENV}/black --exclude venv ${ROOT_DIR}
 	@echo "Syntax fixer process ended"
 
-lint: check_venv
+pylint: check_venv
 	@echo "Running linter"
 	@${VENV}/flake8 ${ROOT_DIR} --exclude=venv/ --max-line-length 99
 	@echo "Linter process ended"
@@ -31,3 +31,13 @@ build:
 	@echo "Compiling js files..."
 	yarn --cwd ${ROOT_DIR}/frontend build
 	@echo "Compilation has finished."
+
+jsfix:
+	@echo "Running JS syntax fixer"
+	yarn --cwd ${ROOT_DIR}/frontend fix
+	@echo "Syntax fixer process ended"
+
+jslint:
+	@echo "Running JS linter"
+	yarn --cwd ${ROOT_DIR}/frontend lint
+	@echo "Linter process ended"

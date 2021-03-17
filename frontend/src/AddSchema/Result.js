@@ -25,9 +25,9 @@ const Result = ({ data }) => {
           <thead>
             <tr>
               {data.sources[0].quality !== undefined ? (
-              <th scope="col" style={{ paddingLeft: 14 }}>
-                Quality
-              </th>
+                <th scope="col" style={{ paddingLeft: 14 }}>
+                  Quality
+                </th>
               ) : null}
               {data.sources[0].type !== undefined ? (
                 <th scope="col">Type</th>
@@ -46,11 +46,11 @@ const Result = ({ data }) => {
           <tbody>
             {data.sources.map((torrent, index) => (
               <tr key={index}>
-                {torrent.quality !== undefined ?
-                <th scope="row" style={{ paddingLeft: 14 }}>
-                  {torrent.quality}
-                </th>
-                  : null}
+                {torrent.quality !== undefined ? (
+                  <th scope="row" style={{ paddingLeft: 14 }}>
+                    {torrent.quality}
+                  </th>
+                ) : null}
                 {torrent.type !== undefined ? <td>{torrent.type}</td> : null}
                 {torrent.seeds !== undefined ? <td>{torrent.seeds}</td> : null}
                 {torrent.size !== undefined ? <td>{torrent.size}</td> : null}
@@ -84,7 +84,8 @@ const Result = ({ data }) => {
         </div>
         <div className={"col"}>
           <span>
-            {data.title ? data.title : data.imdbId} {data.year ? `(${data.year})` : ""}
+            {data.title ? data.title : data.imdbId}{" "}
+            {data.year ? `(${data.year})` : ""}
           </span>
         </div>
         <div className={"col align-center"}>

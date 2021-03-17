@@ -1,6 +1,6 @@
 import React from "react";
 
-const Input = ({obj, updateFunc}) => {
+const Input = ({ obj, updateFunc }) => {
   return (
     <div className="input-group my-2">
       <div className="col-3">
@@ -13,11 +13,14 @@ const Input = ({obj, updateFunc}) => {
           aria-label={obj.key}
         />
       </div>
-      <div className="col-9 d-flex align-items-center" style={{paddingLeft: 5}}>
+      <div
+        className="col-9 d-flex align-items-center"
+        style={{ paddingLeft: 5 }}
+      >
         <input
           onChange={(e) => {
             obj.value = e.target.value;
-            updateFunc({[obj._]: obj});
+            updateFunc({ [obj._]: obj });
           }}
           value={obj.value}
           type="text"

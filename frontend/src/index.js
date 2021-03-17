@@ -1,31 +1,30 @@
-import React from 'react';
-import {render} from 'react-dom';
-import {BrowserRouter, Route, Switch,} from "react-router-dom";
+import React from "react";
+import { render } from "react-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Index from "./index/index";
 import NavBar from "./HeaderFooter/NavBar";
 import AddSchema from "./AddSchema/AddSchema";
 import Help from "./Help/Help";
 import Example from "./Example/Example";
 
-
 const Main = () => {
   return (
     <div>
       <BrowserRouter>
-        <NavBar/>
+        <NavBar />
         <div className="main-content">
           <Switch>
             <Route path="/add">
-              <AddSchema/>
+              <AddSchema />
             </Route>
             <Route path="/example">
               <Example />
             </Route>
             <Route path="/help">
-              <Help/>
+              <Help />
             </Route>
             <Route path="/">
-              <Index/>
+              <Index />
             </Route>
           </Switch>
         </div>
@@ -33,6 +32,6 @@ const Main = () => {
       </BrowserRouter>
     </div>
   );
-}
+};
 
-render(<Main/>, document.getElementById('root'));
+render(<Main />, document.getElementById("root"));
